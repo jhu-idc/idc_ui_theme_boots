@@ -39,3 +39,18 @@
     --tw-bg-opacity: 1;
     background-color: rgba(104, 172, 229, var(--tw-bg-opacity));
 }
+
+#views-exposed-form-solr-search-content-page-1 label {
+    display: none;
+}
+
+#idc-logo-site-name {
+    color: #1d84c3;
+}
+
+.navbar-brand {
+    height: 8rem;
+}
+.site-logo {
+    height: 8rem;
+}
