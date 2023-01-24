@@ -70,7 +70,7 @@
 #}
 
 {% block head %}
-        {% if page.secondary_menu or page.top_header or page.top_header_form %}
+
           <nav{{ navbar_top_attributes }}>
           {% if container_navbar %}
           <div class="container">
@@ -86,7 +86,7 @@
           </div>
           {% endif %}
           </nav>
-        {% endif %}
+
         <nav{{ navbar_attributes }}>
           {% if container_navbar %}
           <div class="container">

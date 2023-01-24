@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  * Example on how to alter theme settings form
  */
 function idc_ui_theme_boots_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+  $form['components']['navbar']['idc_ui_theme_boots_navbar_top_background']['#options'] = [
     'bg-primary' => t('Primary'),
     'bg-secondary' => t('Secondary'),
     'bg-light' => t('Light'),
@@ -23,7 +23,7 @@ function idc_ui_theme_boots_form_system_theme_settings_alter(&$form, FormStateIn
     'bg-white' => t('White'),
     'bg-transparent' => t('Transparent'),
   ];
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+  $form['components']['navbar']['idc_ui_theme_boots_navbar_background']['#options'] = [
     'bg-primary' => t('Primary'),
     'bg-secondary' => t('Secondary'),
     'bg-light' => t('Light'),
