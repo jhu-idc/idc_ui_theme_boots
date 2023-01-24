@@ -1,0 +1,41 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+ :root {
+    --moo: blue;
+    --jhu-bg-primary: white;
+    --pass-blue-primary: #418fde;
+    --pass-blue-header: #005eb8;
+    --jhu-blue-spirit: #68ace5;
+    --jhu-blue-heritage: #002d72;
+    --jhu-black: #31261d;
+    --jhu-secondary-1: #cf4520;
+    --jhu-secondary-2: #76232f;
+    --jhu-secondary-3: #a15a95;
+    --jhu-secondary-4: #009b77;
+    --jhu-secondary-5: #0072ce;
+    --jhu-secondary-6: #f1c400;
+    --jhu-accent-1: #cba052;
+    --jhu-accent-2: #ff9e1b;
+    --jhu-accent-3: #ff6900;
+    --jhu-accent-4: #9e5330;
+    --jhu-accent-5: #4f2c1d;
+    --jhu-accent-6: #e8927c;
+    --jhu-accent-7: #a6192e;
+    --jhu-accent-8: #51284f;
+    --jhu-accent-9: #a192b2;
+    --jhu-accent-10: #418fde;
+    --jhu-accent-11: #86c8bc;
+    --jhu-accent-12: #286140;
+    --jhu-accent-13: #179949;
+    --btn-active-color: #c9c9c9;
+    --header-color: #4a484c;
+    --footer-blackish: #2c2c33;
+    --footer-link-color: #a5bad4;
+}
+.bg-blue-spirit {
+    --tw-bg-opacity: 1;
+    background-color: rgba(104, 172, 229, var(--tw-bg-opacity));
+}

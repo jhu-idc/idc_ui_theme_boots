@@ -1,0 +1,235 @@
+<div
+  id="item-container"
+  class="layout-container bg-gray-200"
+  data-node-id={{ node.id }}
+  data-controller="mirador"
+>
+  <div class="p-4">
+    <div class="container mx-auto bg-white shadow">
+      <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+        <h3 class="text-xl font-bold leading-6 line-clamp-1">
+          {{ node.title.value }} {{ service_file_url }}
+        </h3>
+        {{ intermediate_file_url }}
+      </div>
+      <div class="px-4 py-5 sm:p-6 h-auto">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-2/3">
+            <div id="item-description" data-item-uuid={{ node.uuid.value }}></div>
+          </div>
+          <div class="flex flex-col w-full lg:w-1/3 space-y-4">
+            {% if (media_links or children_media_links) %}
+              <button class="flex items-center place-content-center p-4 bg-blue-spirit hover:bg-gray-200 hover:shadow-xl text-black w-full"
+                data-controller="media-downloads-modal"
+                data-action="click->media-downloads-modal#openModal"
+              >
+                Download Media
+              </button>
+            {% else %}
+              <button class="flex items-center place-content-center p-4 bg-blue-spirit disabled:opacity-50 cursor-not-allowed text-black w-full"
+                data-controller="media-downloads-modal"
+                data-action="click->media-downloads-modal#openModal"
+                disabled
+              >
+                Download Media
+              </button>
+            {% endif %}
+            {% if logged_in %}
+              <a
+                class="flex items-center place-content-center p-4 bg-blue-spirit hover:bg-gray-200 hover:shadow-xl text-black w-full"
+                href={{"/export_items?query=(its_nid:#{node.id})"}}
+              >
+                Export Item Metadata
+              </a>
+            {% endif %}
+            <button class="flex items-center place-content-center p-4 bg-blue-spirit hover:bg-gray-200 hover:shadow-xl text-black w-full"
+              data-controller="citations-modal"
+              data-action="click->citations-modal#openModal"
+            >
+              View Citations
+            </button>
+            <button
+              class="flex items-center place-content-center p-4 bg-blue-spirit hover:bg-gray-200 hover:shadow-xl text-black w-full"
+              data-controller="page-modal"
+              data-action="click->page-modal#openModal"
+            >
+              Ask the Collection Admin
+            </button>
+          </div>
+        </div>
+        <hr class="my-6" />
+        {{ node.description.value }}
+        {{ page.content.idcui_page_title }}
+        <div id="pdf-viewer" class="w-full" data-item-uuid={{ node.uuid.value }}></div>
+        {% if is_paged_content %}
+          <div id="mirador-container" class="h-mirador-container">
+            <div id="mirador-container-loader" class="sk-pulse bg-blue-heritage mx-auto"></div>
+          </div>
+        {% endif %}
+        <div id="seadragon-container" class="hidden p-4 my-4">
+          {{ page.content.openseadragon_block }}
+        </div>
+        {{ page.content.idcui_content }}
+        {{ page.content.system_main }}
+        <hr style="margin-bottom:10px" />
+        <a href="{{[url('<current>'), "?_format=json"]|safe_join}}">View metadata in JSON format</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  id="media-downloads-modal-container"
+  class="hidden fixed z-50 inset-0 overflow-y-auto bg-gray-500 bg-opacity-90"
+  data-controller="media-downloads-modal"
+  data-action="click->media-downloads-modal#closeIfOutside"
+  data-transition-enter="transition ease-out duration-300"
+  data-transition-enter-start="transform opacity-0"
+  data-transition-enter-end="transform opacity-100"
+  data-transition-leave="transition ease-in duration-200"
+  data-transition-leave-start="transform opacity-100"
+  data-transition-leave-end="transform opacity-0"
+>
+  <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20">
+    <div
+      id="media-downloads-modal-body"
+      class="flex flex-col bg-white container"
+    >
+      <div class="flex modal-header border-b justify-between items-center px-5 py-3">
+        <div class="text-xl font-bold">Download Media</div>
+        <div class="flex justify-end">
+          <button
+            id="media-downloads-modal-exit-button"
+            class="text-4xl px-2"
+            data-action="click->media-downloads-modal#closeModal"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col modal-content px-5 pb-4">
+        {% if children_media_links %}
+          <div class="text-gray-600 mt-4">
+            Paged Content Media
+          </div>
+        {% endif %}
+
+
+        {% if media_links %}
+          <a class="mt-4 line-clamp-1" href={{"/media_download_all/node/" ~ node.id}} download={{'all_media_' ~ node.id ~ '.zip'}}>Download All Available Media for {{ node.title.value }}</a>
+
+          <div class="flex flex-col">
+            {% for media in media_links %}
+              <div class="flex flex-col md:flex-row border-b py-4 last:border-b-0">
+                <div class="flex">
+                  <span>{{media.file_name}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                </div>
+                <div class="flex text-black">
+                  <span class="text-gray-500">{{media.file_mime}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                </div>
+                <div class="flex text-black">
+                  <span class="text-gray-500">{{media.file_size}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                </div>
+                <div class="flex text-black">
+                  <span class="text-gray-500">{{media.media_type}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                </div>
+                <div class="flex text-gray-500">
+                  <span>{{media.media_use}}</span><span class="hidden md:flex text-black">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                </div>
+                {% if media.url %}
+                  <div>
+                    <a href={{media.url}} download={{media.file_name}}>Download File</a>
+                  </div>
+                {% else %}
+                  <div class="text-gray-600 italic">
+                    Contact the collection admin for access
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if children_media_links %}
+          <div class="text-gray-600 my-4">
+            Page Media
+          </div>
+
+          {% for child in children_media_links %}
+            <div class="child-wrapper border-b last:border-b-0 space-y-2">
+              <button class="accordian-btn w-full py-4 bg-blue-spirit text-black" data-action="click->media-downloads-modal#toggleChildMedia"><h1>{{ child.title }}</h1></button>
+              <div class="child-node overflow-auto transition-all ease-in-out duration-300 pt-2" style="max-height: 0px">
+                <a class="mt-4 line-clamp-1" href={{"/media_download_all/node/" ~ child.id}} download={{'all_media_' ~ child.id ~ '.zip'}}>Download All Available Media for {{ child.title }}</a>
+                {% for media in child.media_links %}
+                  <div class="flex flex-col md:flex-row border-b py-4 last:border-b-0">
+                    <div class="flex flex-col md:flex-row">
+                      <div class="flex">
+                        <span class="line-clamp-1">{{media.file_name}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      </div>
+                      <div class="flex text-black">
+                        <span class="text-gray-500">{{media.file_mime}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      </div>
+                      <div class="flex text-black">
+                        <span class="text-gray-500">{{media.file_size}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      </div>
+                      <div class="flex text-black">
+                        <span class="text-gray-500 line-clamp-1">{{media.media_type}}</span><span class="hidden md:flex">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      </div>
+                      <div class="flex text-gray-500">
+                        <span class="line-clamp-1">{{media.media_use}}</span><span class="hidden md:flex text-black">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                      </div>
+                    </div>
+                    {% if media.url %}
+                      <div>
+                        <a href={{media.url}} download={{media.file_name}}>Download File</a>
+                      </div>
+                    {% else %}
+                      <div class="text-gray-600 italic line-clamp-1">
+                        Contact the collection admin for access
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="citations-modal-container"
+  class="hidden fixed z-50 inset-0 overflow-y-auto bg-gray-500 bg-opacity-90"
+  data-controller="citations-modal"
+  data-action="click->citations-modal#closeIfOutside"
+  data-transition-enter="transition ease-out duration-300"
+  data-transition-enter-start="transform opacity-0"
+  data-transition-enter-end="transform opacity-100"
+  data-transition-leave="transition ease-in duration-200"
+  data-transition-leave-start="transform opacity-100"
+  data-transition-leave-end="transform opacity-0"
+>
+  <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20">
+    <div
+      id="citations-modal-body"
+      class="flex flex-col bg-white container"
+    >
+      <div class="flex modal-header border-b justify-between items-center px-5 py-3">
+        <div class="text-xl font-bold">Citations</div>
+        <div class="flex justify-end">
+          <button
+            id="citations-modal-exit-button"
+            class="text-4xl px-2"
+            data-action="click->citations-modal#closeModal"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
+      <div id="citations-modal-content" class="flex flex-col modal-content px-5 pb-4">
+      </div>
+    </div>
+  </div>
+</div>
+

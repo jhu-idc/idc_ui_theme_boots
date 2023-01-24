@@ -1,0 +1,15 @@
+<main class="layout-content bg-gray-200 p-4" role="main">
+  <a id="main-content" tabindex="-1"></a>
+  <div class="container mx-auto bg-white shadow">
+    <div class="px-4 py-5 border-b border-gray-200 sm:px-6">
+      <h3 class="text-xl font-bold leading-6 line-clamp-1">
+        {{ page['#title'] }}
+      </h3>
+    </div>
+    <div class="px-4 py-5 container mx-auto">
+      <div id="idc-ui-taxonomy-content">
+        {{ page.content.idcui_content }}
+      </div>
+    </div>
+  </div>
+</main>
