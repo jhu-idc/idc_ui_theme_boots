@@ -26,7 +26,7 @@ body {
 }
 
 #navbar-main {
-  background-color: #1d84c3;
+  background-color: #fff;
 }
 
 a,
@@ -208,7 +208,6 @@ a:active,
 @tailwind utilities;
 
 /* Other application stylesheets */
-
 @import url('./forms.css');
 @import url('./taxonomy.css');
 @import url('./drupal-messages.css');
@@ -216,64 +215,52 @@ a:active,
 @import url('./mirador.css');
 @import url('video.js/dist/video-js.css');
 @import url('@videojs/themes/dist/city/index.css');
-
 video {
   @apply min-w-full;
 }
-
 #idc-search img {
   width: auto;
   max-width: 30%;
 }
-
 #block-idcui-page-title h1 {
   @apply text-3xl hidden;
 }
-
 #block-idcui-local-tasks li.inline-block a {
   @apply text-blue-heritage;
 }
-
 a {
-  @apply text-blue-heritage hover:underline;
+  @apply text-blue-heritage hover: underline;
 }
-
 nav a {
-  @apply text-white hover:underline;
+  @apply text-white hover: underline;
 }
-
 .button {
   @apply inline-flex items-center px-4 py-2 border cursor-pointer;
 }
 .button:hover {
   @apply shadow-xl;
 }
-
 .button-primary {
   @apply border-transparent bg-blue-heritage text-white;
 }
 .button-primary:hover {
   @apply bg-gray-200 text-blue-heritage;
 }
-
 .button .svg-icon {
   @apply h-5 w-5;
 }
-
 .button[disabled] {
   @apply bg-gray-200 text-black cursor-default;
 }
 .button[disabled] {
   @apply shadow-none;
 }
-
 .button.selected {
   @apply bg-blue-spirit text-blue-heritage;
 }
 .button.selected:hover {
   @apply shadow-none;
 }
-
 .card {
   @apply m-8 px-20 py-12 shadow bg-white;
 }
@@ -359,7 +346,7 @@ nav a {
 #block-topnavblock nav a {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
-  padding-right: 1rem
+  padding-right: 1rem;
 }
 
 #featured-items img {
@@ -368,4 +355,3 @@ nav a {
 }
 
 @import 'spinkit.min.css';
-

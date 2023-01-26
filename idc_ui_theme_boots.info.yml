@@ -1,6 +1,6 @@
 name: idc_ui_theme_boots
 type: theme
-description: 'Basic structure for a Bootstrap Barrio SubTheme.'
+description: 'JHU Library theme redesign based on a Bootstrap Barrio SubTheme.'
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: bootstrap_barrio
@@ -32,8 +32,3 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
-
-# Information added by Drupal.org packaging script on 2020-10-25
-version: '8.x-4.33'
-project: 'bootstrap_barrio'
-datestamp: 1603660946
