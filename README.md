@@ -24,3 +24,7 @@ IDC's UI Theme based on the Bootstrap Barrio subtheme
     └── Twigs templates organized by types.
 
 ```
+
+### Main menu comes from a Drupal migration. It is not part of the theme.
+
+To see most recent screenshot go to https://islandora.traefik.me/themes/contrib/idc_ui_theme_boots/images/most_recent_screenshot.png

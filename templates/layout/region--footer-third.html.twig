@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+<section id="footer_third" {{ attributes.addClass(classes) }}>
+  <div class="flex flex-col lg:items-end">
+      <hr class="my-1 w-48 border-t-1">
+      <a class="text-footer-link hover:underline" href="//www.library.jhu.edu/support/">Help &amp; Support</a>
+      <hr class="my-1 w-48 border-t-1">
+      <a class="text-footer-link hover:underline" href="//www.library.jhu.edu/directory/">Librarians &amp; Staff Directory</a>
+      <hr class="my-1 w-48 border-t-1">
+      <a class="text-footer-link hover:underline" href="//www.library.jhu.edu/library-hours/">Libraries &amp; Hours</a>
+      <hr class="my-1 w-48 border-t-1">
+    </div>
+</section>
+{# {% if content %}
+  <section{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </section>
+{% endif %} #}
