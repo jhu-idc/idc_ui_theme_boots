@@ -69,3 +69,11 @@
   margin-left: 0;
   color: var(--jhu-bg-primary);
 }
+
+#page_title h1 {
+  color: #fff;
+}
+
+.site-footer__bottom .block a {
+  color: #fff;
+}
