@@ -1,0 +1,51 @@
+uuid: 5877b5be-bdba-4dde-a75a-43f1c80fbb2f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e9c20a07-ebcc-4b05-a9c1-1b1b8e2ca4cf'
+  module:
+    - block_content
+    - context
+    - islandora
+  theme:
+    - idc_ui_theme_boots
+id: footlegal
+theme: idc_ui_theme_boots
+region: footer_fifth
+weight: 0
+provider: null
+plugin: 'block_content:e9c20a07-ebcc-4b05-a9c1-1b1b8e2ca4cf'
+settings:
+  id: 'block_content:e9c20a07-ebcc-4b05-a9c1-1b1b8e2ca4cf'
+  label: 'Foot legal'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''

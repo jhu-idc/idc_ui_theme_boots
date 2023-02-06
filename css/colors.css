@@ -354,4 +354,33 @@ nav a {
   width: auto;
 }
 
+#block-footer a {
+  --tw-text-opacity: 1;
+  color: rgba(166, 187, 213, var(--tw-text-opacity));
+}
+
+/* Remove border and text formatting */
+#block-sheridanlibrariesaddress {
+  border: none;
+}
+
+#block-sheridanlibrariesaddress div {
+  --tw-text-opacity: 1;
+  color: rgba(166, 187, 213, var(--tw-text-opacity));
+}
+#block-sheridanlibrariesaddress div.content div p a img {
+  height: 2rem;
+  width: auto;
+}
+
+#block-footer hr {
+  border-color: #fff;
+  border-top-width: .5px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  max-width: 14rem;
+  height: 0;
+  margin: 0px;
+}
+
 @import 'spinkit.min.css';

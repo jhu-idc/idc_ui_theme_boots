@@ -1,0 +1,51 @@
+uuid: 882dc2cd-0915-4be2-8600-3dee775ccd89
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1d0f31a8-4f34-431f-b78a-93665b908190'
+  module:
+    - block_content
+    - context
+    - islandora
+  theme:
+    - idc_ui_theme_boots
+id: sheridanlibrariesaddress
+theme: idc_ui_theme_boots
+region: footer_second
+weight: -16
+provider: null
+plugin: 'block_content:1d0f31a8-4f34-431f-b78a-93665b908190'
+settings:
+  id: 'block_content:1d0f31a8-4f34-431f-b78a-93665b908190'
+  label: 'Sheridan Libraries Address'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''
