@@ -7,7 +7,7 @@ idc_ui_theme_boots_install() {
   $block = Block::create([
     'id' => 'idc_ui_theme_boots_legal_block',
     'theme' => 'idc_ui_theme_boots',
-    'region' => 'footer_third',
+    'region' => 'footer_fifth',
     'weight' => 0,
     'provider' => 'idc_ui_theme_boots',
     'label' => 'Foot legal block',
