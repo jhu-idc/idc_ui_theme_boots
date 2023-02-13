@@ -169,54 +169,6 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
-      {% block footer %}
-        <div class="{{ container }}">
-          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="footer site-footer__top clearfix">
-              <div class="footer site-footer__first">
-                {% if page.footer_first %}
-                  {{ page.footer_first }}
-                {% endif %}
-              </div>
-              <div class="footer site-footer__second">
-                {% if page.footer_second %}
-                  {{ page.footer_second }}
-                {% else %}
-                  {% include '@idc_ui_theme_boots/templates/partials/footer_address.twig' %}
-                {% endif %}
-              </div>
-              <div class="footer site-footer__third">
-                {% if page.footer_third %}
-                  {{ page.footer_third }}
-                {% else %}
-                  {% include '@idc_ui_theme_boots/templates/partials/footer_menu.twig' %}
-                {% endif %}
-              </div>
-              <div class="footer site-footer__fourth">
-                {% if page.footer_fourth %}
-                  {{ page.footer_fourth }}
-                {% endif %}
-              </div>
-            </div>
-          {% else %}
-            <div class="footer site-footer__top clearfix">
-              <div class="footer site-footer__first">
-                
-              </div>
-            </div>
-          {% endif %}
-          {% if page.footer_fifth %}
-            <div class="footer site-footer__bottom">
-              {{ page.footer_fifth }}
-            </div>
-          {% else %}
-            <div class="footer site-footer__bottom">
-              {% include '@idc_ui_theme_boots/templates/partials/footer_legal.twig' %}
-            </div>
-          {% endif %}
-        </div>
-      {% endblock %}
-    </footer>
+    {% include '@idc_ui_theme_boots/templates/partials/footer.html.twig' %}
   </div>
 </div>

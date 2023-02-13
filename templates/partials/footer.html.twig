@@ -1,0 +1,64 @@
+<footer class="text-center text-lg-start bg-dark text-muted">
+    {% block footer %}
+        <div class="{{ container }}">
+            {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+                <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-3">
+                                <!-- Content -->
+                                {% if page.footer_first %}
+                                    {{ page.footer_first }}
+                                {% endif %}
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-3">
+                                <!-- Links -->
+                                {% if page.footer_second %}
+                                    {{ page.footer_second }}
+                                {% else %}
+                                    {% include '@idc_ui_theme_boots/templates/partials/footer_address.twig' %}
+                                {% endif %}
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-3">
+                                {% if page.footer_third %}
+                                    {{ page.footer_third }}
+                                {% else %}
+                                    {% include '@idc_ui_theme_boots/templates/partials/footer_menu.twig' %}
+                                {% endif %}
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            {# <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                {% if page.footer_fourth %}
+                                    {{ page.footer_fourth }}
+                                {% endif %}
+                            </div> #}
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    {% if page.footer_fifth %}
+                        {{ page.footer_fifth }}
+                    {% else %}
+                        {% include '@idc_ui_theme_boots/templates/partials/footer_legal.twig' %}
+                    {% endif %}
+                </div>
+                <!-- Copyright -->
+            {% endif %}
+        </div>
+    {% endblock %}
+</footer>
