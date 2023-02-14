@@ -85,3 +85,7 @@
 footer p {
   color: #fff;
 }
+
+#block-footer {
+  border: unset;
+}
