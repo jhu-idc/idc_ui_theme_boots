@@ -1,4 +1,4 @@
-# idc_ui_theme_boots
+# IDC UI Theme boots
 IDC's UI Theme based on the Bootstrap Barrio subtheme
 
 ## Tree structure
