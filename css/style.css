@@ -89,3 +89,9 @@ footer p {
 #block-footer {
   border: unset;
 }
+
+.node--view-mode-teaser {
+  padding: 0 2rem 0 2rem;
+  margin: 1rem;
+  border: 1px solid #d3d7d9;
+}
