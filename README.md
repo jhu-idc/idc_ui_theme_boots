@@ -29,3 +29,16 @@ IDC's UI Theme based on the Bootstrap Barrio subtheme
 
 To see most recent screenshot go to
 ![](https://github.com/jhu-idc/idc_ui_theme_boots/blob/main/images/most_recent_screenshot.png)
+
+<meta name="title" content="JHU Sheridan Library's Islandora Theme">
+<meta name="description" content="IDC's UI Theme based on the Bootstrap Barrio subtheme">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/jhu-idc/idc_ui_theme_boots">
+<meta property="og:title" content="Github repo for IDC's UI Theme">
+<meta property="og:description" content="IDC's UI Theme based on the Bootstrap Barrio subtheme">
+<meta property="og:image" content="https://github.com/jhu-idc/idc_ui_theme_boots/blob/main/images/most_recent_screenshot.png">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://github.com/jhu-idc/idc_ui_theme_boots">
+<meta property="twitter:title" content="Github repo for IDC's UI Theme">
+<meta property="twitter:description" content="IDC's UI Theme based on the Bootstrap Barrio subtheme">
+<meta property="twitter:image" content="https://github.com/jhu-idc/idc_ui_theme_boots/blob/main/images/most_recent_screenshot.png">
