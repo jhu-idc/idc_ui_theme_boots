@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+{%
+set classes = [
+  style_name ? 'image-style-' ~ style_name|clean_class,
+]
+%}
+{# <img{{ attributes.addClass(classes) }} /> #}
+<picture>
+  <img 
+    src="{{ attributes.src }}"
+    srcset="{{ attributes.src }}?width=100 100px, {{ attributes.src }}?width=200 200px, {{ attributes.src }}?width=400 400px, {{ attributes.src }}?width=800 800px"
+    sizes="(max-width: 800px) {{ attributes.width }}, {{ attributes.height }}"
+    style="{{ attributes.class }}"
+    loading="lazy"
+    decoding="async"
+    typeof="{{ attributes.typeof }}"
+    alt="{{ attributes.alt }}"
+  />
+</picture>
