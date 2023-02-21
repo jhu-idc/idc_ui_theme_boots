@@ -17,10 +17,12 @@ set classes = [
 %}
 {# <img{{ attributes.addClass(classes) }} /> #}
 <picture>
+  {# Remove space character from src #}
+
   <img 
     src="{{ attributes.src }}"
-    srcset="{{ attributes.src }}?width=100 100px, {{ attributes.src }}?width=200 200px, {{ attributes.src }}?width=400 400px, {{ attributes.src }}?width=800 800px"
-    sizes="(max-width: 800px) {{ attributes.width }}, {{ attributes.height }}"
+    srcset="{{ attributes.src|url_encode }}?width=100 100w, {{ attributes.src }}?width=200 200w, {{ attributes.src }}?width=400 400w, {{ attributes.src }}?width=800 800w"
+    sizes="(max-width: 800px) {{ attributes.width }}, calc(100vw-20px)"
     style="{{ attributes.class }}"
     loading="lazy"
     decoding="async"

@@ -15,6 +15,14 @@ use Drupal\Core\Form\FormStateInterface;
  * Example on how to alter theme settings form
  */
 function idc_ui_theme_boots_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['idc_ui_theme_boots_navbar_top_background']['#options'] = array(
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  );
   $form['components']['navbar']['idc_ui_theme_boots_navbar_top_background']['#options'] = [
     'bg-primary' => t('Primary'),
     'bg-secondary' => t('Secondary'),
@@ -31,6 +39,17 @@ function idc_ui_theme_boots_form_system_theme_settings_alter(&$form, FormStateIn
     'bg-white' => t('White'),
     'bg-transparent' => t('Transparent'),
   ];
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['open_sans'] = 'Open Sans';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['roboto'] = 'Roboto';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['sansita_swashed'] = 'Sansita Swashed';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Arnhem-Blond'] = 'JHU - Arnhem Blond';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Arnhem-Bold'] = 'JHU - Arnhem Bold';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Gentona-BookItalic'] = 'JHU - Gentona BookItalic';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Gentona-Book'] = 'JHU - Gentona Book';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Gentona-MediumItalic'] = 'JHU - Gentona MediumItalic';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Gentona-Medium'] = 'JHU - Gentona Medium';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Titling-Gothic-Medium'] = 'JHU - Titling Gothic Medium';
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts']['#options']['Titling-Gothic-Regular'] = 'JHU - Titling Gothic Regular';
 }
 
 /**
@@ -38,4 +57,15 @@ function idc_ui_theme_boots_form_system_theme_settings_alter(&$form, FormStateIn
  */
 function idc_ui_theme_boots_preprocess(&$variables, $hook) {
   $variables['base_path'] = base_path();
+}
+
+function idc_ui_theme_boots_preprocess_page(&$variables)
+{
+  $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
+  if ($fonts)
+    $variables['#attached']['library'][] = (in_array($fonts, ['open_sans', 'roboto', 'sansita_swashed']) ? 'idc_ui_theme_boots' : 'bootstrap_barrio' ) . '/' . $fonts;
+}
+
+function idc_ui_theme_boots_preprocess_html(&$variables) {
+  // dvr($variables);
 }
