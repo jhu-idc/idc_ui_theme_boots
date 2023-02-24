@@ -7,21 +7,41 @@
  * - attributes: HTML attributes for the img tag.
  * - style_name: (optional) The name of the image style applied.
  *
+ * - uri: Either the path of the image file (relative to base_path()) or a full URL.
+ * - width: The width of the image (if known).
+ * - height: The height of the image (if known).
+ * - alt: The alternative text for text-based browsers. HTML 4 and XHTML 1.0 always require an alt attribute. The HTML 5 draft allows the alt attribute to be omitted in some cases. Therefore, this variable defaults to an empty string, but can be set to NULL for the attribute to be omitted. Usually, neither omission nor an empty string satisfies accessibility requirements, so it is strongly encouraged for code building variables for image.html.twig templates to pass a meaningful value for this variable.
+ * - title: The title text is displayed when the image is hovered in some popular browsers.
+ * - attributes: Associative array of attributes to be placed in the img tag.
+ * - srcset: Array of multiple URIs and sizes/multipliers.
+ * - sizes: The sizes attribute for viewport-based selection of images
+ *
  * @see template_preprocess_image()
  */
 #}
+
 {%
 set classes = [
   style_name ? 'image-style-' ~ style_name|clean_class,
 ]
 %}
 {# <img{{ attributes.addClass(classes) }} /> #}
-<picture>
-  {# Remove space character from src #}
 
+{# For more information go to https://iiif.io/api/image/2.0/#region #}
+{% set domain = uri|split('/')[2] %}
+{% set url_prefix = 'https://' ~ domain ~ '/cantaloupe/iiif/2/' %}
+{% set src = uri|split('?')|first|url_encode %}
+{% set srcset = [
+  url_prefix ~ src ~ '/full/100,/0/default.webp 100w',
+  url_prefix ~ src ~ '/full/200,/0/default.webp 200w',
+  url_prefix ~ src ~ '/full/400,/0/default.webp 400w',
+  url_prefix ~ src ~ '/full/full/0/default.webp 800w',
+] %}
+                                                                                        
+<picture>
   <img 
-    src="{{ attributes.src }}"
-    srcset="{{ attributes.src|url_encode }}?width=100 100w, {{ attributes.src }}?width=200 200w, {{ attributes.src }}?width=400 400w, {{ attributes.src }}?width=800 800w"
+    src="{{ url_prefix ~ src ~ '/full/full/0/default.webp' }}"
+    srcset="{{ srcset }}"
     sizes="(max-width: 800px) {{ attributes.width }}, calc(100vw-20px)"
     style="{{ attributes.class }}"
     loading="lazy"
