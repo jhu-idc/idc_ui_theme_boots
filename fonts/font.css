@@ -1,0 +1,71 @@
+/* Webfont: Arnhem-Blond */@font-face {
+    font-family: 'Arnhem-Blond';
+    src: url('fonts/Arnhem-Blond.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Arnhem-Bold */@font-face {
+    font-family: 'Arnhem-Bold';
+    src: url('fonts/Arnhem-Bold.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gentona-BookItalic */@font-face {
+    font-family: 'Gentona-BookItalic';
+    src: url('fonts/Gentona-BookItalic.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gentona-Book */@font-face {
+    font-family: 'Gentona-Book';
+    src: url('fonts/Gentona-Book.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gentona-MediumItalic */@font-face {
+    font-family: 'Gentona-MediumItalic';
+    src: url('fonts/Gentona-MediumItalic.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Gentona-Medium */@font-face {
+    font-family: 'Gentona-Medium';
+    src: url('fonts/Gentona-Medium.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Titling-Gothic-Medium */@font-face {
+    font-family: 'Titling-Gothic-Medium';
+    src: url('fonts/Titling-Gothic-Medium.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Titling-Gothic-Regular */@font-face {
+    font-family: 'Titling-Gothic-Regular';
+    src: url('fonts/Titling-Gothic-Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+}

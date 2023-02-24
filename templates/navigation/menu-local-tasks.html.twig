@@ -11,11 +11,23 @@
  * themed in menu-local-task.html.twig.
  */
 #}
+
+{%
+  set classes = [
+    'nav',
+    'nav-pills',
+    'nav-justified',
+    is_active ? 'is-active',
+    primary ? 'primary',
+    secondary ? 'secondary',
+  ]
+%}
+
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="tabs primary">{{ primary }}</ul>
+  <nav {{ attributes.addClass(classes) }}>{{ primary }}</nav>
 {% endif %}
 {% if secondary %}
   <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul class="tabs secondary">{{ secondary }}</ul>
+  <nav {{ attributes.addClass(classes) }}>{{ secondary }}</nav>
 {% endif %}

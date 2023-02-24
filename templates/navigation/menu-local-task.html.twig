@@ -14,4 +14,10 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
-<li{{ attributes.addClass(is_active ? 'is-active') }}>{{ link }}</li>
+{%- if is_active -%}
+    {% set link = link|merge({ '#attributes': { 'class': [ 'nav-item', 'nav-link', 'is-active' ] } }) %}
+{%- else -%}
+    {% set link = link|merge({ '#attributes': { 'class': [ 'nav-item', 'nav-link' ] } }) %}
+{%- endif -%}
+
+{{ link }}
