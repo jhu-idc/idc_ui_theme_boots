@@ -7,12 +7,16 @@
  * - breadcrumb: Breadcrumb trail items.
  */
 #}
+{% for key in attributes|keys %}
+  {{ key }}: {{ attributes[key] }}
+{% endfor %}
 {% if breadcrumb %}
-  <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+  <nav class="breadcrumb" role="navigation" aria-labelledby="breadcrumb" aria-label="breadcrumb">
     <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-    <ol>
+    <ol class="breadcrumb">
     {% for item in breadcrumb %}
-      <li>
+      {# If last item in breadcrumb then add active #}
+      <li class="breadcrumb-item{% if loop.last %} is-active{% endif %}" {% if loop.last %}aria-current="page"{% endif %}>
         {% if item.url %}
           <a href="{{ item.url }}">{{ item.text }}</a>
         {% else %}

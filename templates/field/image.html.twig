@@ -28,19 +28,22 @@ set classes = [
 {# <img{{ attributes.addClass(classes) }} /> #}
 
 {# For more information go to https://iiif.io/api/image/2.0/#region #}
-{% set domain = uri|split('/')[2] %}
-{% set url_prefix = 'https://' ~ domain ~ '/cantaloupe/iiif/2/' %}
-{% set src = uri|split('?')|first|url_encode %}
+
+{% set domain = 'https://' ~ url('<front>')|render|split('/')[2] %}
+
+{% set url_prefix = domain ~ '/cantaloupe/iiif/2/' %}
+
+{% set src = domain|url_encode ~ uri|replace({'public://': "/sites/default/files/"})|replace({' ': "%20"})|split('?')|first|url_encode %}
 {% set srcset = [
   url_prefix ~ src ~ '/full/100,/0/default.webp 100w',
   url_prefix ~ src ~ '/full/200,/0/default.webp 200w',
   url_prefix ~ src ~ '/full/400,/0/default.webp 400w',
-  url_prefix ~ src ~ '/full/full/0/default.webp 800w',
+  url_prefix ~ src ~ '/full/800,/0/default.webp 800w',
 ] %}
-                                                                                        
+
 <picture>
   <img 
-    src="{{ url_prefix ~ src ~ '/full/full/0/default.webp' }}"
+    src="{{ url_prefix ~ src ~ '/full/800,/0/default.webp' }}"
     srcset="{{ srcset }}"
     sizes="(max-width: 800px) {{ attributes.width }}, calc(100vw-20px)"
     style="{{ attributes.class }}"

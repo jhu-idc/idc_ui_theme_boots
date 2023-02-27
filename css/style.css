@@ -95,3 +95,8 @@ footer p {
   margin: 1rem;
   border: 1px solid #d3d7d9;
 }
+
+.breadcrumb {
+  padding: .75rem;
+  margin-bottom: 0;
+}
