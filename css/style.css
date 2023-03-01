@@ -100,3 +100,13 @@ footer p {
   padding: .75rem;
   margin-bottom: 0;
 }
+
+#views-exposed-form-solr-search-content-page-1 {
+  display: unset;
+}
+
+#edit-submit-solr-search-content {
+  height: 2rem;
+  padding-top: 0.175rem;
+  margin-top: 0.1rem;
+}
