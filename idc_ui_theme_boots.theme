@@ -62,8 +62,9 @@ function idc_ui_theme_boots_preprocess(&$variables, $hook) {
 function idc_ui_theme_boots_preprocess_page(&$variables)
 {
   $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
-  if ($fonts)
+  if ($fonts) {
     $variables['#attached']['library'][] = (in_array($fonts, ['open_sans', 'roboto', 'sansita_swashed']) ? 'idc_ui_theme_boots' : 'bootstrap_barrio' ) . '/' . $fonts;
+  }
 }
 
 function idc_ui_theme_boots_preprocess_html(&$variables) {
