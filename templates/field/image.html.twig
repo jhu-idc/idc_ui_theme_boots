@@ -25,15 +25,18 @@ set classes = [
   style_name ? 'image-style-' ~ style_name|clean_class,
 ]
 %}
-{# <img{{ attributes.addClass(classes) }} /> #}
+<img{{ attributes.addClass(classes) }} />
 
 {# For more information go to https://iiif.io/api/image/2.0/#region #}
-
+{# 
 {% set domain = 'https://' ~ url('<front>')|render|split('/')[2] %}
 {% set url_prefix = domain ~ '/cantaloupe/iiif/2/' %}
 
 {% if uri|split(':')[0] == 'public' %}
   {% set src = domain|url_encode ~ uri|replace({'/public/': "/"})|replace({'/styles/medium/': "/"})|replace({' ': "%20"})|split('?')|first %}
+{% elseif url is not empty %}
+  {% set imgplaceholder = "https://picsum.photos/200/300/?blur=2" %}
+  {% set src = domain|url_encode ~ imgplaceholder|url_encode %}
 {% else %}
   {% set src = uri|replace({'/public/': "/"})|replace({'/styles/medium/': "/"})|replace({' ': "%20"})|split('?')|first|url_encode %}
 {% endif %}
@@ -57,4 +60,4 @@ set classes = [
     typeof="{{ attributes.typeof }}"
     alt="{{ attributes.alt }}"
   />
-</picture>
+</picture> #}

@@ -383,4 +383,24 @@ nav a {
   margin: 0px;
 }
 
+.front_page_images {
+  width: 100%;
+}
+
+.intro_description {
+  margin-top: 2rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}
+
+.fp_col_text {
+  padding: 20px 20px 10px 20px;
+}
+
 @import 'spinkit.min.css';
