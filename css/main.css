@@ -1,0 +1,257 @@
+@import 'spinkit.min.css';
+/* Colors */
+:root {
+    --moo: blue;
+    --jhu-bg-primary: white;
+    --pass-blue-primary: #418fde;
+    --pass-blue-header: #005eb8;
+  
+    /* JHU Primary Colors */
+    --jhu-blue-spirit: #68ace5;
+    --jhu-blue-heritage: #002d72;
+    --jhu-black: #31261d;
+  
+    /* JHU Secondary Colors */
+    --jhu-secondary-1: #cf4520;
+    --jhu-secondary-2: #76232f;
+    --jhu-secondary-3: #a15a95;
+    --jhu-secondary-4: #009b77;
+    --jhu-secondary-5: #0072ce;
+    --jhu-secondary-6: #f1c400;
+  
+    /* JHU Accent Colors */
+    --jhu-accent-1: #cba052;
+    --jhu-accent-2: #ff9e1b;
+    --jhu-accent-3: #ff6900;
+    --jhu-accent-4: #9e5330;
+    --jhu-accent-5: #4f2c1d;
+    --jhu-accent-6: #e8927c;
+    --jhu-accent-7: #a6192e;
+    --jhu-accent-8: #51284f;
+    --jhu-accent-9: #a192b2;
+    --jhu-accent-10: #418fde;
+    --jhu-accent-11: #86c8bc;
+    --jhu-accent-12: #286140;
+    --jhu-accent-13: #179949;
+  
+    /* Other colors */
+    --btn-active-color: #c9c9c9;
+    --header-color: #4a484c;
+    --footer-blackish: #2c2c33;
+    --footer-link-color: #a5bad4;
+  }
+  
+  @tailwind base;
+  
+  @font-face {
+    font-family: 'gentona';
+    src: url('../fonts/Gentona-Book.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gentona';
+    src: url('../fonts/Gentona-BookItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'gentona';
+    src: url('../fonts/Gentona-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'gentona';
+    src: url('../fonts/Gentona-MediumItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'arnhem';
+    src: url('../fonts/Arnhem-Blond.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'arnhem';
+    src: url('../fonts/Arnhem-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'titling';
+    src: url('../fonts/Titling-Gothic-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'titling-medium';
+    src: url('../fonts/Titling-Gothic-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @tailwind components;
+  @tailwind utilities;
+  
+  /* Other application stylesheets */
+  
+  video {
+    @apply min-w-full;
+  }
+  
+  #idc-search img {
+    width: auto;
+    max-width: 30%;
+  }
+  
+  #block-idcui-page-title h1 {
+    @apply text-3xl hidden;
+  }
+  
+  #block-idcui-local-tasks li.inline-block a {
+    @apply text-blue-heritage;
+  }
+  
+  a {
+    @apply text-blue-heritage hover:underline;
+  }
+  
+  nav a {
+    @apply text-white hover:underline;
+  }
+  
+  .button {
+    @apply inline-flex items-center px-4 py-2 border cursor-pointer;
+  }
+  .button:hover {
+    @apply shadow-xl;
+  }
+  
+  .button-primary {
+    @apply border-transparent bg-blue-heritage text-white;
+  }
+  .button-primary:hover {
+    @apply bg-gray-200 text-blue-heritage;
+  }
+  
+  .button .svg-icon {
+    @apply h-5 w-5;
+  }
+  
+  .button[disabled] {
+    @apply bg-gray-200 text-black cursor-default;
+  }
+  .button[disabled] {
+    @apply shadow-none;
+  }
+  
+  .button.selected {
+    @apply bg-blue-spirit text-blue-heritage;
+  }
+  .button.selected:hover {
+    @apply shadow-none;
+  }
+  
+  .card {
+    @apply m-8 px-20 py-12 shadow bg-white;
+  }
+  
+  .idc-dropdown {
+    @apply mb-3 inline-flex justify-center w-full px-4 py-2 font-medium leading-5 transition duration-150 ease-in-out bg-white border border-gray-300;
+  }
+  .idc-dropdown:hover {
+    @apply bg-gray-200 text-gray-500;
+  }
+  .idc-dropdown:focus {
+    @apply outline-none border-blue-spirit ring-2 ring-blue-spirit;
+  }
+  .idc-dropdown:active {
+    @apply text-gray-800 bg-gray-50;
+  }
+  
+  #idc-advanced-search label {
+    @apply flex flex-col h-full justify-between my-4 hidden;
+  }
+  
+  .idc-advanced-text-input {
+    @apply leading-5 border-gray-500 bg-gray-100 border-2 px-2;
+  }
+  
+  #idc-advanced-search-terms-list li:first-of-type .ops-button-group {
+    @apply hidden;
+  }
+  
+  .invalid {
+    @apply border-accent-7;
+  }
+  .invalid:focus {
+    @apply border-accent-7;
+  }
+  
+  .breadcrumb {
+    @apply border-b;
+  }
+  
+  .breadcrumb__list {
+    @apply flex mx-8;
+  }
+  .breadcrumb__list-item {
+    @apply my-4 flex-shrink-0;
+  }
+  .breadcrumb__list .breadcrumb__list-item:not(:last-of-type)::after {
+    content: '>';
+    @apply mx-4;
+  }
+  .breadcrumb__list .breadcrumb__list-item:last-of-type {
+    @apply line-clamp-1 flex-shrink;
+  }
+  .breadcrumb__link {
+    @apply text-blue-heritage;
+  }
+  #search-tips-container code {
+    @apply font-bold bg-white px-1;
+  }
+  
+  #block-idc-ui-theme-logo {
+    height: 8rem;
+  }
+  
+  #block-idc-ui-theme-bottom-logo {
+    width: 16rem;
+  }
+  
+  .text-footer-link {
+    --tw-text-opacity: 1;
+    color: rgba(166, 187, 213, var(--tw-text-opacity));
+  }
+  
+  #library-logo {
+    height: 8rem;
+  }
+  
+  .lg\:flex-row {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  #block-topnavblock nav a {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity));
+    padding-right: 1rem
+  }
+  
+  #featured-items img {
+    height: 12rem;
+    width: auto;
+  }
+  
+

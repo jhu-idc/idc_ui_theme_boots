@@ -1,3 +1,4 @@
+@import 'spinkit.min.css';
 /* ---------- Color Module Styles ----------- */
 
 body {
@@ -207,14 +208,6 @@ a:active,
 @tailwind components;
 @tailwind utilities;
 
-/* Other application stylesheets */
-@import url('./forms.css');
-@import url('./taxonomy.css');
-@import url('./drupal-messages.css');
-@import url('./item-detail.css');
-@import url('./mirador.css');
-@import url('video.js/dist/video-js.css');
-@import url('@videojs/themes/dist/city/index.css');
 video {
   @apply min-w-full;
 }
@@ -406,4 +399,3 @@ nav a {
 .views-row {
   min-height: 148px;
 }
-@import 'spinkit.min.css';
