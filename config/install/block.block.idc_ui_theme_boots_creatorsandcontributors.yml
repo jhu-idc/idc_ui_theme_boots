@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.creators_and_contributors
+  module:
+    - facets
+    - islandora
+    - system
+  theme:
+    - idc_ui_theme_boots
+id: idc_ui_theme_boots_creatorsandcontributors
+theme: idc_ui_theme_boots
+region: sidebar_first
+weight: -15
+provider: null
+plugin: 'facet_block:creators_and_contributors'
+settings:
+  id: 'facet_block:creators_and_contributors'
+  label: 'Creators and Contributors'
+  label_display: visible
+  provider: facets
+  block_id: creatorsandcontributors
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /solr-search/content
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''

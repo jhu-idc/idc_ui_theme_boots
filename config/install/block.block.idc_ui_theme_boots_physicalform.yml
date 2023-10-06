@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.physical_form
+  module:
+    - facets
+    - system
+  theme:
+    - idc_ui_theme_boots
+id: idc_ui_theme_boots_physicalform
+theme: idc_ui_theme_boots
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'facet_block:physical_form'
+settings:
+  id: 'facet_block:physical_form'
+  label: 'Physical Form'
+  label_display: visible
+  provider: facets
+  block_id: physicalform
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /solr-search/content

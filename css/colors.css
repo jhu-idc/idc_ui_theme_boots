@@ -399,3 +399,14 @@ nav a {
 .views-row {
   min-height: 148px;
 }
+
+.link-container {
+  max-width: 30%;
+}
+.site-title {
+  padding: 10px 0 10px 0;
+}
+
+#social-media {
+  padding-top: 20px;
+}

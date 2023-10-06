@@ -2,27 +2,27 @@ langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.footer
+    - system.menu.main
   module:
     - context
     - islandora
     - system
   theme:
     - idc_ui_theme_boots
-id: footer
+id: idc_ui_theme_boots_main_menu
 theme: idc_ui_theme_boots
-region: footer_third
-weight: 0
+region: secondary_menu
+weight: -11
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: 'system_menu_block:main'
 settings:
-  id: 'system_menu_block:footer'
-  label: Footer
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
   label_display: '0'
   provider: system
   level: 1
-  depth: 0
-  expand_all_items: false
+  depth: 5
+  expand_all_items: true
 visibility:
   context_all:
     id: context_all

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.temporal_subject
+  module:
+    - facets
+    - system
+  theme:
+    - idc_ui_theme_boots
+id: idc_ui_theme_boots_temporalsubject
+theme: idc_ui_theme_boots
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'facet_block:temporal_subject'
+settings:
+  id: 'facet_block:temporal_subject'
+  label: 'Temporal Subject'
+  label_display: visible
+  provider: facets
+  block_id: temporalsubject
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /solr-search/content

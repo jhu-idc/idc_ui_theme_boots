@@ -1,28 +1,22 @@
 langcode: en
-status: true
+status: false
 dependencies:
-  config:
-    - system.menu.footer
   module:
     - context
     - islandora
-    - system
   theme:
     - idc_ui_theme_boots
-id: footer
+id: idc_ui_theme_boots_page_title
 theme: idc_ui_theme_boots
-region: footer_third
-weight: 0
+region: top_header
+weight: -8
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: page_title_block
 settings:
-  id: 'system_menu_block:footer'
-  label: Footer
+  id: page_title_block
+  label: 'Page title'
   label_display: '0'
-  provider: system
-  level: 1
-  depth: 0
-  expand_all_items: false
+  provider: core
 visibility:
   context_all:
     id: context_all
@@ -32,6 +26,10 @@ visibility:
     id: context
     negate: null
     values: ''
+  request_path_exclusion:
+    id: request_path_exclusion
+    negate: true
+    pages: '<front>'
   user_status:
     id: user_status
     negate: false

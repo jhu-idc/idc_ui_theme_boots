@@ -21,11 +21,18 @@
 #}
 
 {%
-set classes = [
-  style_name ? 'image-style-' ~ style_name|clean_class,
-]
+  set classes = [
+    style_name ? 'image-style-' ~ style_name|clean_class,
+  ]
 %}
-<img{{ attributes.addClass(classes) }} />
+{% 
+  set image_url = file_url(uri) 
+%}
+{% 
+  set fallback_image = 'themes/contrib/idc_ui_theme_boots/images/jhu_library_fallback.jpg'
+%}
+
+<img{{ attributes.addClass(classes) }} src="{{ image_url ? image_url : fallback_image }}" style="max-width:200px;" />
 
 {# For more information go to https://iiif.io/api/image/2.0/#region #}
 {# 

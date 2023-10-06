@@ -1,33 +1,24 @@
 langcode: en
 status: true
 dependencies:
-  config:
-    - system.menu.footer
   module:
     - context
     - islandora
-    - system
+    - islandora_advanced_search
   theme:
     - idc_ui_theme_boots
-id: footer
+id: idc_ui_theme_boots_solrsearchcontentsearchresultspagerforpage
 theme: idc_ui_theme_boots
-region: footer_third
-weight: 0
+region: content
+weight: -11
 provider: null
-plugin: 'system_menu_block:footer'
+plugin: 'islandora_advanced_search_result_pager:solr_search_content__page_1'
 settings:
-  id: 'system_menu_block:footer'
-  label: Footer
-  label_display: '0'
-  provider: system
-  level: 1
-  depth: 0
-  expand_all_items: false
+  id: 'islandora_advanced_search_result_pager:solr_search_content__page_1'
+  label: 'Solr search content: Search Results Pager for Page'
+  label_display: visible
+  provider: islandora_advanced_search
 visibility:
-  context_all:
-    id: context_all
-    negate: null
-    values: ''
   context:
     id: context
     negate: null
@@ -43,6 +34,15 @@ visibility:
       own_page_true: '0'
       field_value: '0'
     user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-collection_children-page_1: view-collection_children-page_1
   media_source_mimetype:
     id: media_source_mimetype
     negate: false
