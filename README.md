@@ -79,3 +79,10 @@ Manage the displayed fields admin/structure/types/manage/collection_object/displ
 
 #### Turn off TWIG Debugging
 Go to `sites/default/services.yml` and then modifying the twig.config section in services.yml to set `debug: false`.
+
+#### Add a new theme twig suggestion
+1. Go to `themes/contrib/idc_ui_theme_boots/idc_ui_theme_boots.theme`
+1. Add a new suggestion in the `idc_ui_theme_boots_theme_suggestions_page_alter` function
+1. Using existing examples `$variables['element']['#id']` that takes in the CSS ID of the element to know which template to suggest.
+1. Clear cache
+
