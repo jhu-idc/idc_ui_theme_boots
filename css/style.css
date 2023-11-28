@@ -112,6 +112,37 @@ footer p {
   margin-top: 0.1rem;
 }
 
+#edit-search-textfield {
+  margin-right: 2rem;
+}
+
+#advanced-search-ajax {
+  margin-bottom: 1rem;
+}
+
+#edit-terms-0-value {
+  width: 100%;
+}
+
+.form-text {
+  width: 100%;
+}
+
+#edit-terms > div.col-md-10 {
+  width: auto;
+}
+
+.col-md-10{
+  width: 100%;
+}
+
+[id^="edit-terms"] input[value="+"] {
+  margin-left: 1rem;
+  margin-top: .25rem;
+  margin-bottom: 0.25rem;
+}
+
+
 .absolute-bottom-div {
   position: absolute;
   bottom: 0;

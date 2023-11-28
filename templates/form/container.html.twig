@@ -19,10 +19,13 @@
  * @see template_preprocess_container()
  */
 #}
+{# If content is a "+" then add class plus_symbol #}
+
 {%
   set classes = [
     has_parent ? 'js-form-wrapper',
     has_parent ? 'form-wrapper',
+    value == '+' ? 'plus_symbol',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>{{ children }}</div>
