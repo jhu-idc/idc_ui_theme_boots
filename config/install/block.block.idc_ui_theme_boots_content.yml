@@ -8,7 +8,7 @@ dependencies:
 id: idc_ui_theme_boots_content
 theme: idc_ui_theme_boots
 region: content
-weight: -10
+weight: -14
 provider: null
 plugin: system_main_block
 settings:

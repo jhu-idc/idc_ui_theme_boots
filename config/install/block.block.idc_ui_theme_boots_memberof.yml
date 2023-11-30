@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - facets.facet.member_of
@@ -12,8 +12,8 @@ dependencies:
     - idc_ui_theme_boots
 id: idc_ui_theme_boots_memberof
 theme: idc_ui_theme_boots
-region: top_header
-weight: -11
+region: sidebar_first
+weight: -7
 provider: null
 plugin: 'facet_block:member_of'
 settings:

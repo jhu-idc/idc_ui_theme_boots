@@ -1,5 +1,5 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - context
@@ -8,8 +8,8 @@ dependencies:
     - idc_ui_theme_boots
 id: idc_ui_theme_boots_page_title
 theme: idc_ui_theme_boots
-region: top_header
-weight: -8
+region: content
+weight: -18
 provider: null
 plugin: page_title_block
 settings:
