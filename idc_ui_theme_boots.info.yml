@@ -1,6 +1,6 @@
 name: idc_ui_theme_boots
 type: theme
-description: 'JHU Library theme redesign based on a Bootstrap Barrio SubTheme (v4).'
+description: 'JHU Library theme redesign based on a Bootstrap Barrio SubTheme (v5).'
 core: 8.x
 core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
